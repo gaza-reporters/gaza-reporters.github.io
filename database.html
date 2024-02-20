@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>THIS IS A HEADLINE</title>
+    <title>INTERACTIVE DATABASE</title>
     <link rel="icon" href="/" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Serif Display"> <!-- h1 & h2 fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant"> <!-- body text fonts -->
     
+    <link rel="stylesheet" href="data/mainStyle.css">
+
     <!-- Background Color-->
     <style>
         html {
@@ -141,10 +143,6 @@
             padding: 0 1rem 0 1rem;
         }
 
-        div.description {
-            margin: 1.5rem auto;
-            max-width: 38rem;            
-        }
 
         div.intro-container {
             margin-right:5rem;
@@ -164,17 +162,6 @@
             max-width: 80rem;
             margin: 0 auto ;
             padding: 0 0.75rem;
-        }
-
-        /* Center all graphics (but customized max-width for each) */
-        div.graphic, div.graphicWizHover  {
-            margin-top: 0px;
-            margin-right: auto;
-            margin-bottom: 0px;
-            margin-left: auto;
-
-            padding-top:1.5rem;
-            padding-bottom:1.5rem;
         }
 
     </style>
@@ -331,12 +318,6 @@
         color:white;         
     }
 
-    p.writing b {
-        color:#342a4e;
-        stroke:#342a4e;
-        -webkit-text-stroke-width: 0.3px;
-    }
-
     p.writing a {
         color:#a18dd8;
         cursor: pointer;
@@ -447,63 +428,35 @@
         }
     </style>
 
-    <!-- Footnotes -->
+    <!-- Filter Text -->
     <style>
-        #footnotes-ref-01, #footnotes-ref-03, #footnotes-ref-04,#footnotes-ref-05,#footnotes-ref-06,#footnotes-ref-07 {
-            vertical-align: super;
-            font-size: 0.5em;
-            color: #2a2a2a; 
-            cursor: pointer; 
-            -webkit-text-stroke-width: 0;
-        }
-
-        #footnotes-ref-02 {
-            vertical-align: super;
-            font-size: 0.5em;
-            color: #faf5ed; 
-            cursor: pointer; 
-            -webkit-text-stroke-width: 0;
-        }
-
-        #footnote01, #footnote02, #footnote03, #footnote04,#footnote05,#footnote06, #footnote07{
-            vertical-align: middle;
-            font-size: 0.8em;
-            color: #2a2a2a; 
-            cursor: pointer;
+        #section-2-filter {
+            font-size:16px;
+            color:#0F282B;    
         }
 
     </style>
+
 
 </head>
 
 <body>	 
     <header>
-        <div id="navigation" class="tabs is-centered">
+        <div id="navigation" class="tabs">
             <ul>
-            <li class="is-active"><a href="#section-1">Section 1</a></li>
-            <li><a href="#section-2">Section 2</a></li>
-            <li><a href="#section-3">Section 3</a></li>
-            <li><a href="#section-4">Section 4</a></li>
+            <li class="is-active"><a href="">The Story</a></li>
+            <li><a href="#section-1">The Killed</a></li>
         </ul>
         </div>
         <div class="intro-container">
             <div class="headline">
-                <h1>THIS IS A HEADLINE</h1>
+                <h1>INTERACTIVE DATABASE</h1>
             </div>
-            <!--<div class="description">
-                <p id="subhead" style="display: block;">This is a short recap of the story</p>
-                <p id="byline">Byline</a></strong></p>
-                <p id="date">Publish date</p>
-            </div>-->
             <section id="brief-intro">
                 <p id="intro">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
                 </p>
-                <br>        
-                <div class="button-container">
-                    <button id="databaseButton" class="button">Explore the Database</button>
-                    <button id="storyButton" class="button">Read the Story</button>
-                </div>
                 <br>        
             </section>
         </div>
@@ -511,84 +464,93 @@
         <br>  
     </header>
     <main id="content">
-        <section id="section-1">
-            <br>
-            <br>
-            <h2>SECTION 1</h2>
-            <p class="writing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-          
-            <p class="writing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            
-            <p class="writing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            <br>
-            <br>
+        <section id="section-1-search"></section>
+      
+        <section id="section-2-filter">
+            <p>Filter by:</p>
+            <div class="columns">
+                <div class="column is-one-third">
+                    <lable>
+                        <select id="selectCountry">
+                          <option value="country">Country</option>
+                          <option value="Israel and the Occupied Palestinian Territory">Israel and the Occupied Palestinian Territory</option>
+                        </select>
+                    </lable>
+                </div>
+                <div class="column is-one-third">
+                    <lable>
+                        <select id="selectYear">
+                          <option value="year">Year</option>
+                          <option>1992</option>
+                          <option>1993</option>
+                          <option>1994</option>
+                          <option>1995</option>
+                          <option>1996</option>
+                          <option>1997</option>
+                          <option>1998</option>
+                          <option>1999</option>
+                          <option>2000</option>
+                          <option>2001</option>
+                          <option>2002</option>
+                          <option>2003</option>
+                          <option>2004</option>
+                          <option>2005</option>
+                          <option>2006</option>
+                          <option>2007</option>
+                          <option>2008</option>
+                          <option>2009</option>
+                          <option>2010</option>
+                          <option>2011</option>
+                          <option>2012</option>
+                          <option>2013</option>
+                          <option>2014</option>
+                          <option>2015</option>
+                          <option>2016</option>
+                          <option>2017</option>
+                          <option>2018</option>
+                          <option>2019</option>
+                          <option>2020</option>
+                          <option>2021</option>
+                          <option>2022</option>
+                          <option>2023</option>
+                          <option>2024</option>
+                  
+                        </select>
+                    </lable>
+
+                    <ul id="list" style="display: none;">
+                        <!--
+                          This is what you want from the dataset csv: 
+                          <li>Columbie High School: 34</li> but js can help you create it automactically 
+                        --> 
+                    </ul>
+                  
+                    <!--Import d3.j3 library-->
+                    <script src="https://d3js.org/d3.v7.min.js"></script>
+                    <script src="data/filter_cpj_data.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
+                </div>
+                <div class="column is-one-third">
+                    this is another filter
+                </div>
+            </div>
         </section>
-        <section id="section-2">
-            <h2>SECTION 2</h2>
-            <p class="writing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            <p class="writing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            <p class="writing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-        </section>
-        <section id="section-3">
-            <h2>SECTION 3</h2>
-            <p class="writing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            <p class="writing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            
-        </section>
-        <section id="footnotes">
-            <hr style="background-color:#0F282B; max-width: 32rem; margin:auto auto; border: none;height: 1px; opacity: 0.5;">
-            <p class="footnotes">
-                Note:
-                <br>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-                <br>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-                <br>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            
-        </section>
+       
     </main>
     <footer>
         <br>
-        <section id="methodology">
-            <p class="writing"><b style="color:#faf5ed !important;">Methodology</b></p>
-            <p class="closing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            <p class="closing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            <p class="closing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            <p class="closing">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-            </p>
-            <br>
-            <hr style="max-width: 32rem; margin: auto auto; border: none;height: 1px; opacity: 0.5;">
-            <p id="closingTag">
-                <br>
-                Journalism Graduate Program | Stanford University | 2024            
-            </p>
-            <br>
-        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </footer>
 </body>
 
