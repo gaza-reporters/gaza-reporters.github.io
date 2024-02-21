@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>THIS IS A HEADLINE</title>
+    <link rel="icon" href="/" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Serif Display"> <!-- h1 & h2 fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant"> <!-- body text fonts -->
+    
+    <!-- Background Color-->
+    <style>
+        html {
+            background-color: #908878;
+        } 
+
+        header {
+            background-image: linear-gradient(to bottom, black,#0F282B, #26353A, #908878);          
+            color:#faf5ed;
+        }
+
+        /* to get rid of the white space above header, you should change margin-top value to padding-top value! */
+        footer {
+            background-image: linear-gradient(to top, black,#0F282B, #26353A, #908878);          
+            color:#faf5ed;
+        }
+
+    </style>
+
+    <!-- Tab Navigation -->
+    <style>
+        div#navigation {
+            background-color: #0F282B;
+            padding-top:1.5rem;
+            position: sticky;
+            top: 0;
+        }
+
+        div#navigation li {
+            font-size: 19px;
+            font-family: "Assistant";
+            text-transform: uppercase;
+        }
+
+        div#navigation li:hover{
+            background-color: #26353A;
+            opacity: 0.9;
+        }
+
+        .tabs ul {
+            align-items: center;
+            border-bottom-color: #faf5ed;
+            border-bottom-style: solid;
+            border-bottom-width: 0.5px;
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 0;
+            justify-content: flex-start;
+        }
+
+        /* Customize nav text properties */
+        div#navigation.tabs a {
+            align-items: center;
+            border-bottom-color: #faf5ed;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            color: #faf5ed;
+            display: flex;
+            justify-content: center;
+            margin-bottom: -1px;
+            padding: 0.5em 1em;
+            vertical-align: top;
+        }
+            
+    </style>
+
+    <!-- Header Button -->
+    <style>
+        .button-container {
+            font-size: 10px;
+        }
+
+        @media only screen and (min-width: 40em){
+            .button-container {
+                margin: 0.5rem 0;
+                font-size: 20px;
+            }
+        }
+
+        #databaseButton {
+            background-color:#0F282B;
+            border-color: #dbdbdb;
+            color: #dbdbdb;
+            font-size: 15px;
+        }
+        
+        #storyButton {
+            background-color:#0F282B;
+            border-color: #dbdbdb;
+            color: #dbdbdb;
+            font-size: 13px;
+        }
+
+        @media only screen and (min-width: 40em){
+            #databaseButton, #storyButton {
+                font-size: 15px;
+            }
+        }
+
+        .button {
+            border-width: 0.5px; 
+            cursor: pointer;
+            justify-content: center;
+            padding-bottom: calc(.5em - 1px);
+            padding-left: 1em;
+            /**padding-right: 5em;**/
+            padding-top: calc(.5em - 1px);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+
+    </style>
+
+    <!-- Section Container -->
+    <style>
+        /* When clicking the top navigation, 
+        to prevent “jump” to that section all of a sudden, 
+        which makes people hard to understand where they are on the page,
+        adding scroll-behavior: smooth will fix the problem:
+        */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        div.headline {
+            margin: 0 auto;
+            padding: 0 1rem 0 1rem;
+        }
+
+        div.description {
+            margin: 1.5rem auto;
+            max-width: 38rem;            
+        }
+
+        div.intro-container {
+            margin-right:5rem;
+            margin-left:5rem;
+        }
+
+        @media only screen and (min-width: 40em){
+            div.intro-container
+                {
+                    margin-right:5rem;
+                    margin-left:5rem;
+                }
+            }
+
+        /* Body */
+        section {
+            max-width: 80rem;
+            margin: 0 auto ;
+            padding: 0 0.75rem;
+        }
+
+        /* Center all graphics (but customized max-width for each) */
+        div.graphic, div.graphicWizHover  {
+            margin-top: 0px;
+            margin-right: auto;
+            margin-bottom: 0px;
+            margin-left: auto;
+
+            padding-top:1.5rem;
+            padding-bottom:1.5rem;
+        }
+
+    </style>
+
+    <!-- General Text -->
+    <style>
+    /* h1 */
+    h1 {
+        max-width: 32rem;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding-top: 1rem;
+        text-align: left;
+        color:#faf5ed;
+
+        font-family: "DM Serif Display";
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 1.4;
+    }
+
+    h1 span {
+        padding: 0 0.5rem;
+        background-color: #faf5ed;
+        color: #342a4e
+    }
+
+    @media only screen and (min-width: 40em){
+        h1 {
+            font-size: 60px;
+        }
+    }
+
+    /* h2 */
+    h2 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.6;
+        font-weight: 600;
+        font-family: "DM Serif Display";
+        color:#0F282B;
+    }
+    @media only screen and (min-width: 40em){
+        h2 {
+        font-size: 24px;
+        }
+    }
+
+    /* p */
+    p {
+        margin: 1.5rem 0;
+        font-size: 17px;
+        line-height: 1.7;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+
+        font-family: "Assistant";
+        font-weight: 500;
+    }
+    
+    @media only screen and (min-width: 40em){
+        p {
+        font-size: 19px;
+        line-height: 1.7;
+        padding-left: 0;
+        padding-right: 0; 
+
+        /* center everything about the text👇*/
+        margin-top: 1.5rem;
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+        margin-left: auto;
+        }
+    }
+    </style>
+
+    <!-- Header Text-->
+    <style>
+    /* p - subhead */
+    p#subhead {
+        /*  margin values for mobile version starts */
+        margin-right:1.5rem;
+        margin-left:1.5rem;
+        /*  margin values for mobile version ends */
+
+        max-width: 60rem;
+        font-weight: 600;
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.6;
+        font-family: "Assistant";
+    }
+
+    @media only screen and (min-width: 40em){
+        #subhead {
+        margin: 0.5rem 0;
+        }
+    }
+
+    /* p - byline */
+    p#byline {
+        margin: 0 auto;
+        padding-top: 0.5rem;
+        padding-bottom: 0;
+
+        text-align: left;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    p#byline a {
+        color: #faf5ed; 
+        cursor: pointer;
+        border-bottom: 1px solid #faf5ed;
+    }
+
+    p#byline a:hover {
+        color:#a18dd8;
+        cursor: pointer;
+    }
+
+    /* p - date */
+    #date {
+        margin: 0 auto;
+        padding-top: 1rem;
+        text-align: left;
+        font-size: 14px;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        color:rgb(211, 211, 211);
+        font-weight: 500;
+    }
+
+    /* p - intro */
+    p#intro {
+
+        font-weight: 600;
+        text-align: left;
+        font-size: 20px;
+        line-height: 1.6;
+        font-family: "Assistant";
+    }
+
+   
+
+    </style>
+
+    <!-- Body Text-->
+    <style>
+    /* p - writing: set up a fixed max-width for body text */
+    p.writing {
+        max-width: 32rem;   
+        color:white;         
+    }
+
+    p.writing b {
+        color:#342a4e;
+        stroke:#342a4e;
+        -webkit-text-stroke-width: 0.3px;
+    }
+
+    p.writing a {
+        color:#a18dd8;
+        cursor: pointer;
+    }
+
+    p.writing a:hover{
+        color:#a18dd8;
+        cursor: pointer;
+        border-bottom: 1px solid #342a4e;
+    }
+    </style>
+
+    <!-- Footer Text-->
+    <style>
+
+    /* p - starnotes */
+    p.starnotes {
+        max-width: 32rem;   
+        font-size:16px;
+        color:#7d7d7d;    
+        padding-bottom: 0;     
+    }
+
+    /* p - footnotes */
+    p.footnotes {
+        max-width: 32rem;   
+        font-size:16px;
+        color:#2a2a2a;    
+        padding-bottom: 1.5rem;     
+    }
+
+    /* p - closing */
+    p.closing {
+        margin-top: 1.5rem;
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+        margin-left: auto;
+        max-width: 32rem;   
+        
+        font-size:16px;
+    }
+
+    p.closing span {
+        padding-top:0.2rem;
+        padding-bottom:0.2rem;
+        padding-right:0.5rem;
+        padding-left:0.5rem;
+        background-color: #faf5ed;
+        color: #342a4e;
+    }
+
+    p.closing a {
+        color:#faf5ed;
+        cursor: pointer;
+        border-bottom: 1px solid #faf5ed;
+    }
+
+    p.closing a:hover{
+        color:#a18dd8;
+        cursor: pointer;
+    }
+
+    p.closing#about-source-me a {
+        color:#a18dd8;
+        cursor: pointer;
+        border-bottom: none;
+    }
+
+    p.closing#about-source-me a:hover {
+        border-bottom: 1px solid #faf5ed;
+    }
+
+    p#closingTag {
+        color:#faf5ed; 
+        text-align: center;
+        letter-spacing: 1px; 
+        margin-top: -0.5rem; 
+    }
+
+    p#closingTag a {
+        color:#faf5ed;
+        cursor: pointer;
+    }
+
+    p#closingTag a:hover{
+        color:#a18dd8;
+        cursor: pointer;
+    }
+
+    </style>
+
+    <!-- Graphic Text -->
+    <style>
+        @font-face {
+        font-family: 'Calibri';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/l/font?kit=J7afnpV-BGlaFfdAhLEY67FIEjg&skey=a1029226f80653a8&v=v15) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+        font-family: 'Calibri';
+        font-style: normal;
+        font-weight: 700;
+        src: url(https://fonts.gstatic.com/l/font?kit=J7aanpV-BGlaFfdAjAo9_pxqHxIZrCE&skey=cd2dd6afe6bf0eb2&v=v15) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <!-- Footnotes -->
+    <style>
+        #footnotes-ref-01, #footnotes-ref-03, #footnotes-ref-04,#footnotes-ref-05,#footnotes-ref-06,#footnotes-ref-07 {
+            vertical-align: super;
+            font-size: 0.5em;
+            color: #2a2a2a; 
+            cursor: pointer; 
+            -webkit-text-stroke-width: 0;
+        }
+
+        #footnotes-ref-02 {
+            vertical-align: super;
+            font-size: 0.5em;
+            color: #faf5ed; 
+            cursor: pointer; 
+            -webkit-text-stroke-width: 0;
+        }
+
+        #footnote01, #footnote02, #footnote03, #footnote04,#footnote05,#footnote06, #footnote07{
+            vertical-align: middle;
+            font-size: 0.8em;
+            color: #2a2a2a; 
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>	 
+    <header>
+        <div id="navigation" class="tabs is-centered">
+            <ul>
+            <li class="is-active"><a href="#section-1">Section 1</a></li>
+            <li><a href="#section-2">Section 2</a></li>
+            <li><a href="#section-3">Section 3</a></li>
+            <li><a href="#section-4">Section 4</a></li>
+        </ul>
+        </div>
+        <div class="intro-container">
+            <div class="headline">
+                <h1>THIS IS A HEADLINE</h1>
+            </div>
+            <!--<div class="description">
+                <p id="subhead" style="display: block;">This is a short recap of the story</p>
+                <p id="byline">Byline</a></strong></p>
+                <p id="date">Publish date</p>
+            </div>-->
+            <section id="brief-intro">
+                <p id="intro">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+                </p>
+                <br>        
+                <div class="button-container">
+                    <button id="databaseButton" class="button">Explore the Database</button>
+                    <button id="storyButton" class="button">Read the Story</button>
+                </div>
+                <br>        
+            </section>
+        </div>
+        <br>
+        <br>  
+    </header>
+    <main id="content">
+        <section id="section-1">
+            <br>
+            <br>
+            <h2>SECTION 1</h2>
+            <p class="writing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+          
+            <p class="writing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            
+            <p class="writing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            <br>
+            <br>
+        </section>
+        <section id="section-2">
+            <h2>SECTION 2</h2>
+            <p class="writing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            <p class="writing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            <p class="writing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+        </section>
+        <section id="section-3">
+            <h2>SECTION 3</h2>
+            <p class="writing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            <p class="writing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            
+        </section>
+        <section id="footnotes">
+            <hr style="background-color:#0F282B; max-width: 32rem; margin:auto auto; border: none;height: 1px; opacity: 0.5;">
+            <p class="footnotes">
+                Note:
+                <br>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+                <br>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+                <br>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            
+        </section>
+    </main>
+    <footer>
+        <br>
+        <section id="methodology">
+            <p class="writing"><b style="color:#faf5ed !important;">Methodology</b></p>
+            <p class="closing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            <p class="closing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            <p class="closing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            <p class="closing">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+            </p>
+            <br>
+            <hr style="max-width: 32rem; margin: auto auto; border: none;height: 1px; opacity: 0.5;">
+            <p id="closingTag">
+                <br>
+                Journalism Graduate Program | Stanford University | 2024            
+            </p>
+            <br>
+        </section>
+    </footer>
+</body>
+
+</html>
+
+
