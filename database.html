@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Serif Display"> <!-- h1 & h2 fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant"> <!-- body text fonts -->
     
+    
     <link rel="stylesheet" href="data/mainStyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+
 
     <!-- Background Color-->
     <style>
@@ -224,8 +228,8 @@
     
     @media only screen and (min-width: 40em){
         p {
-        font-size: 19px;
-        line-height: 1.7;
+        font-size: 17px;
+        line-height: 1;
         padding-left: 0;
         padding-right: 0; 
 
@@ -437,6 +441,26 @@
 
     </style>
 
+    <!-- Card Filter-->
+    <style>
+        .card {
+            display: inline-block;
+            width: calc(33.33% - 20px); /* 20px is the total margin and padding */
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            width: 100%; /* Set the width of each card to 100% of the column width */
+            margin: 0;
+        }
+
+        #card-visualization {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* Create a grid with columns that are at least 30% wide */
+            gap: 10px; /* Add some gap between cards */
+        }
+
+    </style>
 
 </head>
 
@@ -464,76 +488,48 @@
         <br>  
     </header>
     <main id="content">
-        <section id="section-1-search"></section>
+        <section id="section-1-search">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <script src="data/searchBar_cpj_data.js"></script>
+        </section>
       
         <section id="section-2-filter">
             <p>Filter by:</p>
             <div class="columns">
                 <div class="column is-one-third">
                     <lable>
-                        <select id="selectCountry">
-                          <option value="country">Country</option>
-                          <option value="Israel and the Occupied Palestinian Territory">Israel and the Occupied Palestinian Territory</option>
+                        <select id="countryFilter">
+                            <option value="">Select a country</option>
                         </select>
                     </lable>
                 </div>
                 <div class="column is-one-third">
                     <lable>
-                        <select id="selectYear">
-                          <option value="year">Year</option>
-                          <option>1992</option>
-                          <option>1993</option>
-                          <option>1994</option>
-                          <option>1995</option>
-                          <option>1996</option>
-                          <option>1997</option>
-                          <option>1998</option>
-                          <option>1999</option>
-                          <option>2000</option>
-                          <option>2001</option>
-                          <option>2002</option>
-                          <option>2003</option>
-                          <option>2004</option>
-                          <option>2005</option>
-                          <option>2006</option>
-                          <option>2007</option>
-                          <option>2008</option>
-                          <option>2009</option>
-                          <option>2010</option>
-                          <option>2011</option>
-                          <option>2012</option>
-                          <option>2013</option>
-                          <option>2014</option>
-                          <option>2015</option>
-                          <option>2016</option>
-                          <option>2017</option>
-                          <option>2018</option>
-                          <option>2019</option>
-                          <option>2020</option>
-                          <option>2021</option>
-                          <option>2022</option>
-                          <option>2023</option>
-                          <option>2024</option>
-                  
-                        </select>
+                        <select id="yearFilter">
+                            <option value="">Select a year</option>
+                        </select>                
                     </lable>
-
-                    <ul id="list" style="display: none;">
-                        <!--
-                          This is what you want from the dataset csv: 
-                          <li>Columbie High School: 34</li> but js can help you create it automactically 
-                        --> 
-                    </ul>
-                  
-                    <!--Import d3.j3 library-->
-                    <script src="https://d3js.org/d3.v7.min.js"></script>
-                    <script src="data/filter_cpj_data.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
                 </div>
                 <div class="column is-one-third">
-                    this is another filter
+                    <label for="country-select">How many total journalists have died in this conflict compared to other conflicts?</label>
+                    <select id="country-select"></select>
+                    <p>Total killed journalists: <span id="total-journalists"></span></p>
+
+                    <script src="data/sumup_filter.js"></script>
                 </div>
             </div>
+        </section>
+
+        <section id="section-show-content">
+            <!-- <ul id="searchBarResults"></ul>-->
+            <!--<ul id="filterResults" style="display: none;"></ul>-->
+
+            <div id="card-visualization"></div>
+            <!--Import d3.j3 library-->
+            <script src="https://d3js.org/d3.v7.min.js"></script>
+            <script src="data/cardFilter.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
+
         </section>
        
     </main>
