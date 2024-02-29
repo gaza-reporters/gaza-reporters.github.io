@@ -1,6 +1,6 @@
 // Function to fetch and parse JSON data
 async function fetchJSON(columnName) {
-    const response = await fetch('data/reporters_extra_columns_feb8.json');
+    const response = await fetch('/docs/data/reporters_extra_columns_feb8.json');
     const data = await response.json();
     return data.map(item => {
         const value = item[columnName];
