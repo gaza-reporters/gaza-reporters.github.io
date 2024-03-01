@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let data = [];
 
   async function loadCSV() {
-      const response = await fetch('/docs/data/reporters_extra_columns_feb8.csv');
+      const response = await fetch('/data/reporters_extra_columns_feb8.csv');
       const text = await response.text();
   
       // Parse CSV using PapaParse
