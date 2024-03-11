@@ -47,6 +47,7 @@ fetch("/data/reporters_extra_columns_feb8_gaza_only.csv")
     function filter() {
     const selectedMonth = monthFilter.value;
     const selectedYear = yearFilter.value;
+    console.log("selected month is " + selectedMonth)
 
     const cards = Array.from(visualization.querySelectorAll(".card"));
 
