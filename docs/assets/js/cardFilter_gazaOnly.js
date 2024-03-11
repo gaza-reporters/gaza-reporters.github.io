@@ -3,7 +3,7 @@ const visualization = document.getElementById("card-visualization");
 const countryFilter = document.getElementById("countryFilter");
 
 
-fetch("/docs/data/reporters_extra_columns_feb8_gaza_only.csv")
+fetch("/data/reporters_extra_columns_feb8_gaza_only.csv")
   .then(response => response.text())
   .then(csvData => {
     // Parse the CSV data into an array of objects
@@ -47,6 +47,7 @@ fetch("/docs/data/reporters_extra_columns_feb8_gaza_only.csv")
     function filter() {
     const selectedMonth = monthFilter.value;
     const selectedYear = yearFilter.value;
+    console.log("selected month is " + selectedMonth)
 
     const cards = Array.from(visualization.querySelectorAll(".card"));
 

@@ -1,4 +1,4 @@
-let spreadsheet = "data/reporters_extra_columns_feb8.csv";
+let spreadsheet = "/data/reporters_extra_columns_feb8.csv";
 let rows; // or just --> let rows = [];
  
 // filter goes here

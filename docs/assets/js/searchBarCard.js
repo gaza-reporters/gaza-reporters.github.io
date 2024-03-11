@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
   // Create cards for filtered data
   filteredData.forEach(d => {
-    const card = document.createElement('div');
+   const card = document.createElement('div');
+
     card.classList.add('card');
     card.innerHTML = `
       <h2>${d.fullName}</h2>
