@@ -27,11 +27,14 @@
   border-radius: 50%;
   cursor: pointer;
 }
-for (const feature of geojson.features) {
-  const el = document.createElement('div');
-  el.className = 'marker';
-  new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
-}
+.mapboxgl-popup {
+        max-width: 400px;
+        font:
+            12px/20px 'Helvetica Neue',
+            Arial,
+            Helvetica,
+            sans-serif;
+    }
     </style>
 </head>
 <body>
