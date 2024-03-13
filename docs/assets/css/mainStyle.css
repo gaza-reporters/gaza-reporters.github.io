@@ -228,7 +228,20 @@
         }
     }
 
-    /** Header Text **/
+    /* map */
+    #map {
+        /*position: absolute; */
+        margin: 0 auto;
+        padding: 20em;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: none;
+
+    }
+    
+
+/** Header Text **/
     /* p - subhead */
     p#subhead {
         /*  margin values for mobile version starts */
@@ -320,9 +333,7 @@
         border-bottom: 1px solid #342a4e;
     }
 
-    /** Footer Text **/
-    <style>
-
+/** Footer Text **/
     /* p - starnotes */
     p.starnotes {
         max-width: 32rem;   
