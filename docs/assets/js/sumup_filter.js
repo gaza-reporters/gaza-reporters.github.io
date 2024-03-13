@@ -1,6 +1,6 @@
 // Function to fetch and parse JSON data
 async function fetchJSON(columnName) {
-    const response = await fetch('/data/reporters_extra_columns_feb8.json');
+    const response = await fetch('/docs/data/reporters_extra_columns_feb8.json');
     const data = await response.json();
     return data.map(item => {
         const value = item[columnName];
@@ -24,8 +24,8 @@ fetchJSON("country").then(data => {
     const countrySelect = document.getElementById('country-select');
     
     const placeholderOption = document.createElement('option');
-    placeholderOption.value = 'Any';
-    placeholderOption.textContent = 'Any';
+    placeholderOption.value = 'Select a conflict...';
+    placeholderOption.textContent = 'Select a conflict...';
     countrySelect.appendChild(placeholderOption);
 
     Object.keys(groupedData).forEach(country => {

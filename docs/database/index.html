@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>INTERACTIVE DATABASE</title>
+    <title>The Gaza Memorial</title>
     <link rel="icon" href="/" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Serif Display"> <!-- h1 & h2 fonts -->
@@ -164,6 +164,8 @@
             margin: 0 auto ;
             padding: 0 0.75rem;
         }
+
+
 
     </style>
 
@@ -429,17 +431,100 @@
         }
     </style>
 
-    <!-- Filter Text -->
+    <!-- Compare Dropdown Filter -->
     <style>
-        #section-2-filter {
+        #country-select.dropdown-content {
+            max-width: 100%;
+            width: 50%;
+        }
+    </style>
+
+    <!-- Compare Dropdown Filter Text -->
+    <style>
+        #section-0-compare-stats #country-select{
+            font-family: "Assistant";
             font-size:16px;
-            color:#0F282B;    
+            color:rgba(66, 64, 64, 0.624);    
+        }
+
+        #section-0-compare-stats label, #section-0-compare-stats p{
+            font-family: "DM Serif Display";
+            font-size:22px;
+            color:white;  
         }
 
     </style>
 
-    <!-- Card Filter-->
+
+    <!-- Two Dropdown Filters -->
     <style>
+    .dropdown-content {
+        background-color: #fff;
+        box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
+        padding-bottom: .2rem;
+        padding-top: .2rem;
+        padding-left: .5rem;
+        border:1px solid rgb(220, 220, 220);
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .dropdown-content:hover  {
+        border-color: #26353A; 
+    }
+
+    </style>
+
+    <!-- Two Dropdown Filters Text -->
+    <style>
+        #section-2-filter p {
+            font-family: "DM Serif Display" !important;
+            font-size:20px !important;
+            color:white !important;    
+        }
+        
+        #section-2-filter #monthFilter, #section-2-filter #yearFilter {
+            font-family: "Assistant" !important;
+            font-size:16px !important;
+            color:rgba(66, 64, 64, 0.624) !important;    
+        }
+    </style>
+
+    <!-- Searchbar -->
+    <style>
+        #section-1-search input.input {
+            max-width: 100%;
+            width: 49%;
+            height:2rem;
+            width: 100%;
+            cursor: text;
+        }
+
+        #section-1-search input.input:hover  {
+            border-color: #26353A; 
+        }
+
+    </style>
+
+    <!-- Searchbar Text -->
+    <style>
+         #section-1-search #searchInput {
+            font-family: "Assistant";
+            font-size:16px;
+            color:#0F282B;    
+        }
+        
+    </style>
+
+    <!-- Card Display -->
+    <style>
+         a {
+            color:#ccc;;
+        }
+
+        a:hover {
+            color: #f8e0b8;
+        }
         .card {
             display: inline-block;
             width: calc(33.33% - 20px); /* 20px is the total margin and padding */
@@ -468,29 +553,40 @@
     <header>
         <div id="navigation" class="tabs">
             <ul>
-            <li class="is-active"><a href="">The Story</a></li>
-            <li><a href="#section-1">The Killed</a></li>
+            <li class="is-active"><a href="https://gaza-reporters.github.io/">The Story</a></li>
+            <li><a href="https://gaza-reporters.github.io/database/">The Database</a></li>
         </ul>
         </div>
         <div class="intro-container">
             <div class="headline">
-                <h1>INTERACTIVE DATABASE</h1>
+                <h1>Gaza Lost Journalist Memorial</h1>
             </div>
             <section id="brief-intro">
                 <p id="intro">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+                    In this endless war, civilians and soldiers have died, as have some journalists seeking to document the tragedy. This database contains detailed information about war correspondents who sacrificed their lives in the Israeli-Palestinian conflict since 2000. By searching through the timeline, you can also find the latest personal information about journalists who have died since last October in the 2023 Israel-Hamas war.
                 </p>
-                <br>        
+                <p id="intro">
+                    There are 105 journalists, including media workers, who were killed in the conflict between Israel and the Occupied Palestinian Territory since 2000. Among them, 74 were killed during the 2023 Israel-Hamas war.
+                </p>      
             </section>
         </div>
-        <br>
-        <br>  
     </header>
+
     <main id="content">
+        <section id="section-0-compare-stats">
+            <label for="country-select">Make A Comparison - How many journalists were killed in other conflicts since 1992?</label>
+            <br>
+            <br>
+            <select id="country-select" class="dropdown-content" ></select>
+            <br>
+            <p>Total killed journalists: <span id="total-journalists"></span></p>
+            <script src="/docs/assets/js/sumup_filter.js"></script>
+        </section>
         <section id="section-1-search">
             <!-- Search input -->
-            <input type="text" id="searchInput" placeholder="Search...">
+            <input class="input" type="text" id="searchInput" placeholder=" Search...">
+            <br>
+            <br>
             <!-- Container for the cards -->
             <div id="searchBarResults"></div>
             <!-- Include the PapaParse library -->
@@ -498,34 +594,27 @@
             <!-- Link to my searchBarCard.js -->
             <script src="/docs/assets/js/searchBarCard.js"></script>
         </section>
-      
         <section id="section-2-filter">
             <p>Filter by:</p>
             <div class="columns">
-                <div class="column is-one-third">
+                <div class="column is-half">
                     <lable>
-                        <select id="monthFilter">
-                            <option value="">Select a month</option>
+                        <select id="monthFilter" class="dropdown-content">
+                            <option value="">Month of the Death</option>
                         </select>
                     </lable>
                 </div>
-                <div class="column is-one-third">
+                <div class="column is-half">
                     <lable>
-                        <select id="yearFilter">
-                            <option value="">Select a year</option>
+                        <select id="yearFilter" class="dropdown-content">
+                            <option value="">Year of the Death</option>
                         </select>                
                     </lable>
                 </div>
-                <div class="column is-one-third">
-                    <label for="country-select">How many total journalists have died in this conflict compared to other conflicts?</label>
-                    <select id="country-select"></select>
-                    <p>Total killed journalists: <span id="total-journalists"></span></p>
-
-                    <script src="/docs/assets/js/sumup_filter.js"></script>
-                </div>
+                <!--<div class="column is-one-third"></div>-->
             </div>
+            <br>
         </section>
-
         <section id="section-show-content">
 
             <div id="card-visualization"></div>
@@ -535,7 +624,6 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
 
         </section>
-       
     </main>
     <footer>
         <br>
