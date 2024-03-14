@@ -28,7 +28,10 @@ fetchJSON("country").then(data => {
     placeholderOption.textContent = 'Select a conflict...';
     countrySelect.appendChild(placeholderOption);
 
-    Object.keys(groupedData).forEach(country => {
+    // Sort the keys of groupedData alphabetically
+    const sortedCountries = Object.keys(groupedData).sort((a, b) => a.localeCompare(b));
+
+    sortedCountries.forEach(country => {
         const option = document.createElement('option');
         option.value = country;
         option.textContent = country;
