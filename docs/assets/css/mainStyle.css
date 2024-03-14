@@ -74,7 +74,7 @@
         background-color:#0F282B;
         border-color: #dbdbdb;
         color: #dbdbdb;
-        font-size: 15px;
+        font-size: 13px;
     }
     
     #storyButton {
@@ -147,8 +147,8 @@
     }
 
     div.intro-container {
-        margin-right:5rem;
-        margin-left:5rem;
+        margin-right:1rem;
+        margin-left:1rem;
     }
 
     @media only screen and (min-width: 40em){
@@ -165,6 +165,13 @@
         margin: 0 auto ;
         padding: 0 0.75rem;
     }
+
+    #brief-intro {
+        max-width: 70rem;
+        margin: 0;
+        padding: 0 0.75rem;
+    }
+
 
     /* Center all graphics (but customized max-width for each) */
     div.graphic, div.graphicWizHover  {
@@ -190,7 +197,7 @@
 
         font-family: "DM Serif Display";
         font-weight: 800;
-        font-size: 40px;
+        font-size: 32px;
         line-height: 1.4;
     }
 
@@ -306,12 +313,18 @@
 
     /* Header: p.intro */
     p.intro {
-
-        font-weight: 600;
+        font-size:15px;
         text-align: left;
-        font-size: 20px;
-        line-height: 1.6;
-        font-family: "Assistant";
+    }
+
+    @media only screen and (min-width: 40em){
+    p.intro {
+            font-weight: 600;
+            text-align: left;
+            font-size: 20px;
+            line-height: 1.6;
+            font-family: "Assistant";
+        }
     }
    
     /** Body: p.main **/
