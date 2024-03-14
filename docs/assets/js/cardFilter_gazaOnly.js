@@ -3,7 +3,7 @@ const visualization = document.getElementById("card-visualization");
 const countryFilter = document.getElementById("countryFilter");
 
 
-fetch("/data/reporters_extra_columns_feb8_gaza_only.csv")
+fetch("/data/reporters_extra_columns_feb8_gaza_only_updated.csv")
   .then(response => response.text())
   .then(csvData => {
     // Parse the CSV data into an array of objects
@@ -75,9 +75,9 @@ fetch("/data/reporters_extra_columns_feb8_gaza_only.csv")
       card.innerHTML = `
           <h2>${person.fullName}</h2>
           <p>Date of Death: ${person.startDisplay}</p>
-          <p>Location of Death: ${person.location}, ${person.country}</p>
-          <p>Type of Death: ${person.typeOfDeath}</p>
+          <p>Location of Death: ${person.location}</p>
           <p>News Organization: ${person.organizations}</p>
+          <p>Link to this journalist on CPJ: <a href="${person.mtpage}">${person.mtpage}</a></p>
           <div class="details" style="display: none;"> Link to this journalist: <a href="${person.mtpage}">${person.mtpage}</a></div>
       `;
       visualization.appendChild(card);
@@ -86,7 +86,7 @@ fetch("/data/reporters_extra_columns_feb8_gaza_only.csv")
     // Click event listener for showing/hiding details
       card.addEventListener("click", () => {
         const details = card.querySelector(".details");
-        details.style.display = details.style.display === "none" ? "block" : "none";
+        //details.style.display = details.style.display === "none" ? "block" : "none"; (deactivate the card-click-interactive feature)
       });
     });
 
