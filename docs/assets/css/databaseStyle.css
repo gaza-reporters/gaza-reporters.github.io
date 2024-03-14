@@ -1,6 +1,6 @@
 /* BACKGROUND COLOR */
     html {
-        background-color: #908878; 
+        background-color: #908878;
     } 
 
     header {
@@ -74,7 +74,7 @@
         background-color:#0F282B;
         border-color: #dbdbdb;
         color: #dbdbdb;
-        font-size: 13px;
+        font-size: 15px;
     }
     
     #storyButton {
@@ -96,36 +96,15 @@
         justify-content: center;
         padding-bottom: calc(.5em - 1px);
         padding-left: 1em;
-        /* padding-right: 5em; */
+        /**padding-right: 5em;**/
         padding-top: calc(.5em - 1px);
         text-align: center;
         white-space: nowrap;
     }
 
-/* LOGISTIC STYLE */
-    /* hyper link style */
-    a {
-        color:white;
-    }
-
-    a:hover {
-        color:#f8e0b8;
-    }
-
-
-/* MAP STYLE */
-    #map {
-        /*position: absolute; */
-        margin: 0 auto;
-        padding: 20em;
-        top: auto;
-        bottom: auto;
-        width: 100%;
-        max-width: none;
-    }
-
 
 /* SECTION CONTAINER STYLE */
+    
     /* When clicking the top navigation, 
     to prevent “jump” to that section all of a sudden, 
     which makes people hard to understand where they are on the page,
@@ -141,14 +120,9 @@
         padding: 0 1rem 0 1rem;
     }
 
-    div.description {
-        margin: 1.5rem auto;
-        max-width: 38rem;            
-    }
-
     div.intro-container {
-        margin-right:1rem;
-        margin-left:1rem;
+        margin-right:5rem;
+        margin-left:5rem;
     }
 
     @media only screen and (min-width: 40em){
@@ -166,26 +140,9 @@
         padding: 0 0.75rem;
     }
 
-    #brief-intro {
-        max-width: 70rem;
-        margin: 0;
-        padding: 0 0.75rem;
-    }
 
 
-    /* Center all graphics (but customized max-width for each) */
-    div.graphic, div.graphicWizHover  {
-        margin-top: 0px;
-        margin-right: auto;
-        margin-bottom: 0px;
-        margin-left: auto;
-
-        padding-top:1.5rem;
-        padding-bottom:1.5rem;
-    }
-
-
-/* ALL THE TEXT STYLE */
+/* ALL TEXT STYLE */
     /* h1 */
     h1 {
         max-width: 32rem;
@@ -197,7 +154,7 @@
 
         font-family: "DM Serif Display";
         font-weight: 800;
-        font-size: 32px;
+        font-size: 40px;
         line-height: 1.4;
     }
 
@@ -216,11 +173,11 @@
     /* h2 */
     h2 {
         text-align: center;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 1.6;
         font-weight: 600;
         font-family: "DM Serif Display";
-        color:#0F282B;
+        color:white;
     }
     @media only screen and (min-width: 40em){
         h2 {
@@ -230,7 +187,7 @@
 
     /* p */
     p {
-        text-align: center;
+        margin: 1.5rem 0;
         font-size: 17px;
         line-height: 1.7;
         padding-left: 0.5rem;
@@ -242,8 +199,8 @@
     
     @media only screen and (min-width: 40em){
         p {
-        font-size: 19px;
-        line-height: 1.7;
+        font-size: 17px;
+        line-height: 1.5;
         padding-left: 0;
         padding-right: 0; 
 
@@ -254,139 +211,119 @@
         margin-left: auto;
         }
     }
+    
+    /* Header: p.intro */
+    p.intro {
 
-    /* Header: p#subhead */
-    p#subhead {
-        /*  margin values for mobile version starts */
-        margin-right:1.5rem;
-        margin-left:1.5rem;
-        /*  margin values for mobile version ends */
-
-        max-width: 60rem;
         font-weight: 600;
-        text-align: center;
+        text-align: left;
         font-size: 20px;
         line-height: 1.6;
         font-family: "Assistant";
     }
 
-    @media only screen and (min-width: 40em){
-        #subhead {
-        margin: 0.5rem 0;
-        }
+    #section-0-sumup #country-select{
+        font-family: "Assistant";
+        font-size:16px;
+        color:rgba(66, 64, 64, 0.624);    
     }
 
-    /* Header: p#byline */
-    p#byline {
-        margin: 0 auto;
-        padding-top: 0.5rem;
-        padding-bottom: 0;
-
-        text-align: left;
-        font-size: 17px;
-        line-height: 1.5;
+    /* Section-0-sumup: text style */
+    #section-0-sumup label, #section-0-sumup p{
+        font-family: "DM Serif Display";
+        font-size:22px;
+        color:white;  
     }
 
-    p#byline a {
-        color: #faf5ed; 
-        cursor: pointer;
-        border-bottom: 1px solid #faf5ed;
+    /* Section-1-search: text style */
+    #section-1-search p{
+        font-family: "DM Serif Display";
+        font-size:22px;
+        color:white;  
+    }
+    #section-1-search #searchInput {
+        font-family: "Assistant";
+        font-size:16px;
+        color:#0F282B;    
     }
 
-    p#byline a:hover {
-        color:#a18dd8;
-        cursor: pointer;
+    /* Section-2-filter: text style */
+    #section-2-filter p {
+        font-family: "DM Serif Display" !important;
+        font-size:22px !important;
+        color:white !important;    
     }
-
-    /* Header: p#date */
-    #date {
-        margin: 0 auto;
-        padding-top: 1rem;
-        text-align: left;
-        font-size: 14px;
-        line-height: 1.5;
-        text-transform: uppercase;
-        letter-spacing: .05em;
-        color:rgb(211, 211, 211);
-        font-weight: 500;
-    }
-
-    /* Header: p.intro */
-    p.intro {
-        font-size:15px;
-        text-align: left;
-    }
-
-    @media only screen and (min-width: 40em){
-    p.intro {
-            font-weight: 600;
-            text-align: left;
-            font-size: 20px;
-            line-height: 1.6;
-            font-family: "Assistant";
-        }
-    }
-   
-    /** Body: p.main **/
-    p.main {
-        max-width: 32rem;/* set up a fixed max-width for body text */
-        color:white;         
-    }
-
-    p.main b {
-        color:#342a4e;
-        stroke:#342a4e;
-        -webkit-text-stroke-width: 0.3px;
-    }
-
-    p.main a {
-        color:#a18dd8;
-        cursor: pointer;
-    }
-
-    p.main a:hover{
-        color:#a18dd8;
-        cursor: pointer;
-        border-bottom: 1px solid #342a4e;
+    
+    #section-2-filter #monthFilter, #section-2-filter #yearFilter {
+        font-family: "Assistant" !important;
+        font-size:16px !important;
+        color:rgba(66, 64, 64, 0.624) !important;    
     }
 
 
-/* IMAGE & VIDEO STYLE */
-    .image-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 40px; 
+/* SUMUP FILTER STYLE */
+    #country-select.dropdown-content {
+        max-width: 100%;
+        width: 50%;
     }
-    img.centered {
-        display: block;
+    
+/* SEARCH BAR STYLE */
+    #section-1-search input.input {
+        max-width: 100%;
+        width: 49%;
+        height:2rem;
+        width: 100%;
+        cursor: text;
+    }
+
+    #section-1-search input.input:hover  {
+        border-color: #26353A; 
+    }
+
+/* DOUBLE FILTER STYLE */
+    .dropdown-content {
+        background-color: #fff;
+        box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
+        padding-bottom: .2rem;
+        padding-top: .2rem;
+        padding-left: .5rem;
+        border:1px solid rgb(220, 220, 220);
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .dropdown-content:hover  {
+        border-color: #26353A; 
+    }
+
+
+/* CARD DISPLAY STYLE */
+    #section-show-content a {
+        color:#f8e0b8;
+    }
+
+    #section-show-content a:hover {
+        color:#f8e0b8;
+        border-bottom: 1px solid #ccc; /* Change border color on hover */
+    }
+
+    .card {
+        display: inline-block;
+        width: calc(33.33% - 20px); /* 20px is the total margin and padding */
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        width: 100%; /* Set the width of each card to 100% of the column width */
         margin: 0;
-        max-width: 25%; 
-        height: auto;
-    }
-    img.inline {
-        float: left;
-        margin-right: 0px; 
-        max-width: 20%; 
-        height: auto;
+        background-color:#26353A;
+        opacity: 1;
+        color:#ccc;
     }
 
-    .clearfix::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-        gap: 30px;
-    }
-
-    video {
-        max-width: 30%; 
-        height: auto;
+    #card-visualization, #searchBarResults {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* Create a grid with columns that are at least 30% wide */
+        gap: 10px; /* Add some gap between cards */
     }
 
