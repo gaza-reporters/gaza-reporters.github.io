@@ -4,7 +4,7 @@
 
 ## Goal
 Our goal is to build up a News App that tracks all the journalists who have been killed in Gaza during the war. We built up two main pages: 
-1) **Story Page** - we created a narrative featuring all the journalists who were killed in 2024, along with an interactive map on which each dots represent the killed journalist. We focused on a few of these killings and use video news or social media images to show the impact of the strike that killed them.
+1) **Story Page** - We created a narrative featuring journalists who were killed in 2024, along with an interactive map. Each dot on the map represents a killed journalist. We focused on several of these killings, using video news or social media images to illustrate the impact of the attacks that claimed their lives.
 2) **Database Page** -  we created a database that contains detailed information about all the journalists who were killed in the Israeli-Palestinian conflict since 2000. By searching through the timeline, readers can also find the latest personal information about journalists who have died since last October in the 2023 Israel-Hamas war.
 
 ## Targeted Readers and Users
