@@ -24,11 +24,14 @@ fetchJSON("country").then(data => {
     const countrySelect = document.getElementById('country-select');
     
     const placeholderOption = document.createElement('option');
-    placeholderOption.value = 'Any';
-    placeholderOption.textContent = 'Any';
+    placeholderOption.value = 'Select a conflict...';
+    placeholderOption.textContent = 'Select a conflict...';
     countrySelect.appendChild(placeholderOption);
 
-    Object.keys(groupedData).forEach(country => {
+    // Sort the keys of groupedData alphabetically
+    const sortedCountries = Object.keys(groupedData).sort((a, b) => a.localeCompare(b));
+
+    sortedCountries.forEach(country => {
         const option = document.createElement('option');
         option.value = country;
         option.textContent = country;

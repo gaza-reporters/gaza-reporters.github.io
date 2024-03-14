@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "gaza-reporters-media",
+			"path": "../../../Desktop/gaza-reporters-media"
+		},
+		{
+			"name": "gaza-reporters.github.io",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "gaza-reporters.github.io"
+	}
+}
