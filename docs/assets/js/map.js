@@ -186,7 +186,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoicm93YW5pbmdzIiwiYSI6ImNscnpndW9vbzIwMnIycnJ6b
                         },
                         'geometry': {
                             'type': 'Point',
-                            'coordinates': [34.45, 31.4]
+                            'coordinates': [34.4501, 31.4100]
                         }
                     },
                     {
@@ -197,7 +197,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoicm93YW5pbmdzIiwiYSI6ImNscnpndW9vbzIwMnIycnJ6b
                         },
                         'geometry': {
                             'type': 'Point',
-                            'coordinates': [34.35, 31.55]
+                            'coordinates': [34.3501, 31.5501]
                         }
                     },
             
@@ -205,9 +205,8 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoicm93YW5pbmdzIiwiYSI6ImNscnpndW9vbzIwMnIycnJ6b
             }
         });
 
-        console.log('Adding layer...'); // print out successfully
+        console.log('Adding layer...'); 
 
-        // Add a layer showing the places.
         map.addLayer({
             'id': 'places',
             'type': 'circle',
@@ -220,33 +219,30 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoicm93YW5pbmdzIiwiYSI6ImNscnpndW9vbzIwMnIycnJ6b
             }
         });
 
-        // Create a popup, but don't add it to the map yet.
+    
         const popup = new mapboxgl.Popup({
             closeButton: false,
             closeOnClick: false
         });
 
         map.on('mouseenter', 'places', (e) => {
-            // Change the cursor style as a UI indicator.
+            
             map.getCanvas().style.cursor = 'pointer';
 
             console.log('mouseenter event triggered');
             console.log('e.features:', e.features);
             console.log('e.lngLat:', e.lngLat);
 
-            // Copy coordinates array.
+            
             const coordinates = e.features[0].geometry.coordinates.slice();
             const description = e.features[0].properties.description;
 
-            // Ensure that if the map is zoomed out such that multiple
-            // copies of the feature are visible, the popup appears
-            // over the copy being pointed to.
+            
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }
 
-            // Populate the popup and set its coordinates
-            // based on the feature found.
+            
             popup.setLngLat(coordinates).setHTML(description).addTo(map);
         });
 
