@@ -114,15 +114,11 @@
 
 
 /* MAP STYLE */
+
     #map {
-        /*position: absolute; */
-        margin: 0 auto;
-        padding: 20em;
-        top: auto;
-        bottom: auto;
-        width: 100%;
-        max-width: none;
-    }
+            height: 500px;
+        }
+    
 
 
 /* SECTION CONTAINER STYLE */
