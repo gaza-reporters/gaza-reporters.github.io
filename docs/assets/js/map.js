@@ -233,3 +233,4 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoicm93YW5pbmdzIiwiYSI6ImNscnpndW9vbzIwMnIycnJ6b
             popup.remove();
         });
     });
+    
